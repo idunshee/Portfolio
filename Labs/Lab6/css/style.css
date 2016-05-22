@@ -1,0 +1,81 @@
+body {
+  font-family: sans-serif;
+}
+
+.Row {
+	display: table-row;
+}
+
+#map {
+  width: 960px;
+  height: 500px;
+}
+
+#pcp {
+  width: 960px;
+  height: 200px;
+}
+
+svg {
+  position: absolute;
+}
+
+.map {
+	border: medium solid #999;
+}
+
+path {
+  fill: #000;
+  fill-opacity: .6;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+path:hover {
+  fill: #000;
+  fill-opacity: 1.0;
+}
+
+.regions {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.regions2 {
+  fill: none;
+  stroke: #000;
+  stroke-width: 0.5px;
+  stroke-linecap: round;
+}
+
+.infolabel {
+	position: absolute;
+  float: right;
+	width: 200px;
+	height: 70px;
+	color: #fff;
+	background-color: #000;
+	border: solid thin #fff;
+	padding: 5px;
+}
+
+.infolabel h1 {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	line-height: 1em;
+}
+
+.infolabel b {
+	float: left;
+}
+
+.labelname {
+	display: inline-block;
+	float: right;
+	margin: -25px 0px 0px 40px;
+	font-size: 1em;
+	font-weight: bold;
+	position: absolute;
+}

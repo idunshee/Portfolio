@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Coordinated Views for Analyzing Multivariate Relationships</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="../../css/3-col-portfolio.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
+  <link rel="stylesheet" href="css/d3.parcoords.css">
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="js/d3.parcoords.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://geog3540.github.io/idunshee/">Ian C. Dunshee: Geovisual Portfolio</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="../../Bio/shortbio.html">About</a>
+          </li>
+          <li>
+          <a href="../Labs.html">Labs</a>
+          </li>
+          <li>  
+          <a href="../../Project/Project.html">Projects</a>  
+          </li> 
+          <li>
+            <a href="../../CV/Dunshee-CopyofC.V. Euro-Anglais - BetterV2.pdf">Resume/CV</a>
+          </li>
+          <li>
+            <a href="mailto:ian-dunshee@uiowa.edu">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Coordinated Views for Analyzing Multivariate Relationships: Population Change
+          in Martinique from 1982-2013
+        </h1>
+                  <div> 
+                 <style> 
+                 p {  
+                  text-indent: 30px; 
+                     } 
+                 </style> 
+        <p>Just by looking at the Choropleth map, one can begin to see the disparity in population trends by looking at the Parallel
+      Coordinate Plot (PCP) below along with the Lab 5 information. When looking at the Lab 5 choropleth map for instance, it is readily apparent
+      that the central part of the island has historically been the residence of the majority of the island of Martinique. However, what
+      this map reveals is that there is large population growth in the Central and Southern parts of the island while the communes in the
+      North have a static or slowly decreasing population. These larger patterns could be attributed to some common causes but what is a little more 
+      unexplainable is that small fishing villages such as Case Pilote have in some cases more than doubled in size.</p>
+
+      <p> Clearly what these patterns actually mean and what there numerous causes might be is not an easily answerable question. There are many
+        factors which are likely playing a part in these patterns which more detailed statistical and census data would help
+        to see. From visiting these areas in person a few things become clear in regards to the larger patterns: 
+        firstly, the areas of low population are often at the far north
+        and south of the island as noted in the Lab 5 Map.
+        These are areas which contain high levels of either tropical forest or mangroves which make large
+        scale habitation difficult due to remoteness, lack of supplies, and the harsh qualities of the climate. The north in particular
+        is home to the island's volcano Mt. Pelee which has erupted several times throughout history, decimating the living space around it and so it is also
+        likely that people are moving away from it as an eruption becomes more and more likely for the near future and has been predicted to be due soon.
+         In addition to this, almost all of the land on the island has remained within families for generations and is a source of pride for
+         some which helps explain in part why so few people are moving around, particularly in the more remote areas such as the North. 
+          Some of the growth can likely be attributed to common
+      causes such as people moving out of overpopulated cities (St. Joseph) or visitors or businesses relocating to the more active
+      tourist regions (Ducos, Riviere-Salee, Trois-Ilets, and Le Diamant).The large growth in Lamentin specifically could be explained by the fact that it was a mangrove
+        which was "filled" thus recently become habitable and is today an area where industry is growing rapidly. These of course are not the only reasons why these changes might be
+      happening, but they are plausible potential explanations one could think of without more readily available information.</p>
+
+        <p>This evidence is of course anecdotal and small scale. To really discover what is happening on the Island of Martinique, quantitative and qualitative
+          data should be collected over long periods of time. Unfortunately, population counts are some of the only data that is available by commune currently
+          with all other data from the French Overseas departments being on an island by island basis which is certainly good for comparing islands but this makes
+          understanding intra-isle economy, crime, and other sociological phenomena very difficult to study.
+        </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+          <div id="legend" class="col-md-6 portfolio-item"> </div>
+          <div id="info-label" class="col-md-6 portfolio-item"> </div>
+      </div>
+
+      <!-- /.row -->
+      <!-- Projects Row -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-md-12 portfolio-item">
+            <div id="map"/>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- /.row -->
+      <!-- Projects Row -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-md-12 portfolio-item">
+            <div id="pcp" class="parcoords"/>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright &copy; Ian Dunshee 2016</p>
+          </div>
+        </div>
+        <!-- /.row -->
+      </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!--link to main JavaScript file-->
+    <script src="js/main.js"></script>
+
+  </body>
+
+  </html>

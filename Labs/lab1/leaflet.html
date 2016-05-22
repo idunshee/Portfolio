@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Leaflet Map</title>
+	<!-- External Stylesheets -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+<body>
+	<!-- Our web map and content will go here -->
+	<div id="map" style="width: 700px; height: 400px"></div>
+	<!-- Add the Leaflet JavaScript library -->
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script>
+    	// Create variable to hold map element, give initial settings to map
+    	var map = L.map('map',{ center: [41.6667, -91.5333], zoom: 15});
+
+    	// Add OpenStreetMap tile layer to map element
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+
+		// Create point feature for Kendall Square T Station
+		var myDataPoint = L.marker([41.6667, -91.5333]).addTo(map);
+
+
+	</script>
+</body>
+</html>
